@@ -1,0 +1,38 @@
+고 3주차
+
+https://github.com/OMORI-Aubrey
+	반대표 깃허브
+
+원격 리포지토리에는 깃랩, 비트버켓 등등 다양하다
+윈도우즈 자격증명관리>일반자격증명 에 깃허브 관련 제거하면 깔끔해짐
+c드라이브 아래에 보기
+
+echo "출력할문자열" >> 파일명
+	파일 만들면서 내용 작성
+	>> 없으면 그냥 콘솔에 출력
+rm 파일명
+	파일삭제
+
+git branch -M 브랜치명
+	브랜치 이동
+	-m 이랑 다른점은 move or force 이기에 반드시 전환 가능
+
+git remote add origin https://github.com/Terrrrrrra/OpenSource2025b.git
+	remote -> 원격
+	add -> 추가
+	origin -> 변수
+
+	-u -> --set-upstream의 축약
+		기본 푸쉬 주소 등록하는것
+	git remote -v
+		변수 확인
+
+	git remote remove origin
+		등록한 변수 제거
+
+git clone 원격주소
+	원격 리포지토리 다운로드
+	끝에 . -> 새 폴더를 만들지 않음
+
+history
+	모든 터미널 이용 기록 출력
