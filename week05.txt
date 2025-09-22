@@ -9,7 +9,9 @@ rm 파일이름
 
 git 명령어
 git reset
+git merge 브랜치명
 
 
 기타
 .gitignore 파일생성 (*.exe)
+pakage, import, func, Println, Printf, {}, ;
