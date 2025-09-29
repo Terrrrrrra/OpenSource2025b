@@ -16,6 +16,8 @@ func main() {
 	Variable2()
 	fmt.Println("\n---------------\n")
 	ZeroValues()
+	fmt.Println("\n---------------\n")
+	Variable3()
 }
 
 func TypePrint() {
@@ -88,4 +90,12 @@ func ZeroValues() {
 	fmt.Println(t, reflect.TypeOf(t))
 	fmt.Println(s, reflect.TypeOf(s))
 	fmt.Println(i, reflect.TypeOf(i))
+}
+
+func Variable3() {
+	// var 64f float64
+	// fmt.Println(64f, reflect.TypeOf(64f))
+
+	totalPrice := 10
+	fmt.Println(totalPrice, reflect.TypeOf(totalPrice))
 }
