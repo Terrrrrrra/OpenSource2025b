@@ -10,7 +10,12 @@ import (
 // Ctrl+F5
 func main() {
 	TypePrint()
+	fmt.Println("\n---------------\n")
 	Variable()
+	fmt.Println("\n---------------\n")
+	Variable2()
+	fmt.Println("\n---------------\n")
+	ZeroValues()
 }
 
 func TypePrint() {
@@ -56,4 +61,31 @@ func Variable() {
 
 	fmt.Println(name, reflect.TypeOf(name))
 	fmt.Println(id, reflect.TypeOf(id))
+}
+
+func Variable2() {
+	//var name string
+	name := "Inha"
+	var id int
+	id = 1000
+
+	var gpa float32 = 3.99
+
+	fmt.Println(id, reflect.TypeOf(id))
+	fmt.Println(name, reflect.TypeOf(name))
+	fmt.Println(gpa, reflect.TypeOf(gpa))
+}
+
+func ZeroValues() {
+	var f64 float64
+	var i16 int16
+	var t bool
+	var s string
+	var i int
+
+	fmt.Println(f64, reflect.TypeOf(f64))
+	fmt.Println(i16, reflect.TypeOf(i16))
+	fmt.Println(t, reflect.TypeOf(t))
+	fmt.Println(s, reflect.TypeOf(s))
+	fmt.Println(i, reflect.TypeOf(i))
 }
