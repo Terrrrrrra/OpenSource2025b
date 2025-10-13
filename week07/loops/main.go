@@ -6,6 +6,7 @@ import (
 	"log"
 	"os"
 	"reflect"
+	"strconv"
 	"strings"
 	"time"
 )
@@ -17,7 +18,11 @@ func main() {
 	fmt.Println("\n------------------\n")
 	Swap()
 	fmt.Println("\n------------------\n")
-	InOut()
+	//InOut()
+	fmt.Println("\n------------------\n")
+	Shadowing()
+	fmt.Println("\n------------------\n")
+	ConvStrToFloat()
 }
 
 func Casting() {
@@ -55,4 +60,37 @@ func InOut() {
 		log.Fatal(err) // report err, and exit process
 	}
 	fmt.Println(i)
+}
+
+func Shadowing() {
+	// var int int = 99
+	// var b int = 8
+	// fmt.Println(int, b)
+
+	// var fmt string = "inha"
+	// fmt.Println(fmt)
+}
+
+func ConvStrToFloat() {
+	reader := bufio.NewReader(os.Stdin)
+	fmt.Print("Enter score : ")
+	i, err := reader.ReadString('\n')
+	if err != nil {
+		log.Fatal(err) // report err, and exit process
+	}
+
+	i = strings.TrimSpace(i)
+	score, err := strconv.ParseFloat(i, 64)
+	if err != nil {
+		log.Fatal(err) // report err, and exit process
+	}
+
+	var status string
+	if score >= 60 {
+		status = "Pass"
+	} else {
+		status = "Fail"
+	}
+
+	fmt.Println(score, status)
 }
