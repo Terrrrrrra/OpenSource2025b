@@ -51,6 +51,8 @@ func InOut() {
 	r := bufio.NewReader(os.Stdin)
 	i, err := r.ReadString('\n')
 	//fmt.Println(err)
-	log.Fatal(err) // report err, and exit process
+	if err != nil {
+		log.Fatal(err) // report err, and exit process
+	}
 	fmt.Println(i)
 }
