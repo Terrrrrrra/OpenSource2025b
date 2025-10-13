@@ -1,7 +1,10 @@
 package main
 
 import (
+	"bufio"
 	"fmt"
+	"log"
+	"os"
 	"reflect"
 	"strings"
 	"time"
@@ -13,6 +16,8 @@ func main() {
 	TimeEX()
 	fmt.Println("\n------------------\n")
 	Swap()
+	fmt.Println("\n------------------\n")
+	InOut()
 }
 
 func Casting() {
@@ -40,4 +45,12 @@ func Swap() {
 	changer := strings.NewReplacer("$", "!")
 	changed := changer.Replace(univ)
 	fmt.Println(changed)
+}
+
+func InOut() {
+	r := bufio.NewReader(os.Stdin)
+	i, err := r.ReadString('\n')
+	//fmt.Println(err)
+	log.Fatal(err) // report err, and exit process
+	fmt.Println(i)
 }
