@@ -4,6 +4,7 @@ import (
 	"bufio"
 	"fmt"
 	"log"
+	"math/rand"
 	"os"
 	"reflect"
 	"strconv"
@@ -22,7 +23,9 @@ func main() {
 	fmt.Println("\n------------------\n")
 	Shadowing()
 	fmt.Println("\n------------------\n")
-	ConvStrToFloat()
+	//ConvStrToFloat()
+	fmt.Println("\n------------------\n")
+	Game1()
 }
 
 func Casting() {
@@ -93,4 +96,31 @@ func ConvStrToFloat() {
 	}
 
 	fmt.Println(score, status)
+}
+
+func Game1() {
+	target := rand.Intn(100) + 1
+	for guess := 0; guess < 10; guess++ {
+		reader := bufio.NewReader(os.Stdin)
+		fmt.Print("Enter score : ")
+		i, err := reader.ReadString('\n')
+		if err != nil {
+			log.Fatal(err) // report err, and exit process
+		}
+
+		i = strings.TrimSpace(i)
+		score, err := strconv.Atoi(i)
+		if err != nil {
+			log.Fatal(err) // report err, and exit process
+		}
+
+		if score < target {
+			fmt.Println("up")
+		} else if score > target {
+			fmt.Println("down")
+		} else {
+			fmt.Println("성공")
+			break
+		}
+	}
 }
