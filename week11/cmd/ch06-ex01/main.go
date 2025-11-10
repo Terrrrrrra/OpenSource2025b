@@ -13,6 +13,7 @@ func main() {
 	subjects := []string{"Go", "Javascript", "Python", "Linux"} // slice literal
 	subjectsSlice := subjects[:3]                               // slicing
 	subjectsSlice[0] = "Java"
+	subjectsSlice = append(subjectsSlice, "Go")
 
 	for _, subject := range subjects {
 		fmt.Println(subject)
