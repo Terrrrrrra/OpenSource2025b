@@ -32,4 +32,12 @@ func main() {
 	for i, name := range names {
 		fmt.Println(name, ":", counts[i])
 	}
+
+	counts2 := make(map[string]int)
+	for _, line := range lines {
+		counts2[line]++
+	}
+	for name, count := range counts2 {
+		fmt.Println(name, ":", count)
+	}
 }
