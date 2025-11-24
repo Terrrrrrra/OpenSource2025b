@@ -7,22 +7,26 @@ import (
 )
 
 func main() {
-	today := calendar.Date{}
+	event := calendar.Event{}
 	// date.year = 2025
+	err := event.SetTitle("Mom's birthday")
+	if err != nil {
+		log.Fatal(err)
+	}
 
-	err := today.SetYear(2025)
+	err = event.SetYear(2025)
 	if err != nil {
 		log.Fatal(err)
 	}
-	err = today.SetMonth(12)
+	err = event.SetMonth(12)
 	if err != nil {
 		log.Fatal(err)
 	}
-	err = today.SetDay(24)
+	err = event.SetDay(24)
 	if err != nil {
 		log.Fatal(err)
 	}
-	fmt.Println(today)
-
-	fmt.Println(today.Year(), "년", today.Month(), "월", today.Day(), "일")
+	fmt.Println(event)
+	fmt.Println(event.Title())
+	fmt.Println(event.Year(), "년", event.Month(), "월", event.Day(), "일")
 }
